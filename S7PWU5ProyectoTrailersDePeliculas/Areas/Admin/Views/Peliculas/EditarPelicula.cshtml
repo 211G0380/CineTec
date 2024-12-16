@@ -1,0 +1,59 @@
+﻿@model S7PWU5ProyectoTrailersDePeliculas.Areas.Admin.Models.AgregarViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+	ViewData["Title"] = "EditarPelicula";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h1>Editar Película</h1>
+
+<form asp-action="EditarPelicula" method="post" enctype="multipart/form-data">
+    <input type="hidden" asp-for="Peliculas.IdPelicula" />
+
+    <div class="form-group">
+        <label for="Nombre">Nombre</label>
+        <input asp-for="@Model.Peliculas.Nombre" class="form-control" required/>
+    </div>
+
+    <div class="form-group">
+        <label for="Duracion">Duración</label>
+        <input asp-for="@Model.Peliculas.Duracion" class="form-control" required/>
+    </div>
+
+    <div class="form-group">
+        <label for="Anio_Salida">Año de Salida</label>
+        <input asp-for="@Model.Peliculas.AnioSalida" type="number" class="form-control" required/>
+    </div>
+
+    <div class="form-group">
+        <label for="Resumen">Resumen</label>
+        <textarea asp-for="@Model.Peliculas.Resumen" class="form-control" required></textarea>
+    </div>
+    <div class="form-group">
+        <label for="Resumen">Link</label>
+        <textarea asp-for="@Model.Peliculas.LinkTrailer" class="form-control" required></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="Calificacion">Calificación</label>
+        <input asp-for="@Model.Peliculas.Calificacion" type="number" class="form-control" required/>
+    </div>
+
+    <div class="form-group">
+        <label for="ID_Genero">Género</label>
+        <select asp-for="Peliculas.IdGenero" asp-items="@(new SelectList(Model.GenerosSeleccionar,"IdGenero","NombreGenero"))" class="form-control">
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="ID_Clasificacion">Clasificacion</label>
+        <select asp-for="Peliculas.IdClasificacion" asp-items="@(new SelectList(Model.ClasificacionSeleccionar,"IdClasificacion","ClasificacionDePelicula"))" class="form-control">
+        </select>
+    </div>
+    <div>
+        <label>Imagen:</label>
+        <input type="file" id="fileUpload1" accept="image/jpeg" asp-for="Imagen" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+</form>

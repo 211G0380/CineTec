@@ -1,0 +1,56 @@
+﻿@model IEnumerable<S7PWU5ProyectoTrailersDePeliculas.Models.Entities.Peliculas>
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="~/EstiloPeliculas.css" />
+    <title>Reseñas de Películas</title>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">CineTEC</div>
+        <nav>
+            <a href="~/Admin">Admin</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="featured-movie">
+            <img  src="~/imagenes/El Caballero de la Noche.jpg" Pelicula:Moana 2>
+            <div class="movie-info">
+                <h1>El Caballero de la Noche</h1>
+                <p><strong>2008</strong> | 02:10 | Accion</p>
+                <p>Batman, el Caballero Oscuro, se enfrenta a su mayor desafío cuando un nuevo villano, el Joker, aparece en Gotham City. El Joker es un criminal impredecible y caót...</p>
+                <button>
+                    <a href="~/Home/Pelicula/3">Ver Resumen</a>
+                </button>
+                
+            </div>
+        </section>
+      
+
+
+
+        <section class="recommended">
+            <h2>Recomendadas</h2>
+            <div class="movies-grid">
+            @foreach (var x in Model)
+            {
+                <div  class="movie">
+                        <a href="~/Home/Pelicula/@x.IdPelicula"><img src="~/imagenes/@(x.Nombre).jpg" Pelicula:></a>
+                    <p>@(x.Nombre)</p>
+                </div>
+ 
+                
+            }
+            </div>
+       
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 CineTEC</p>
+    </footer>
+</body>
+</html>

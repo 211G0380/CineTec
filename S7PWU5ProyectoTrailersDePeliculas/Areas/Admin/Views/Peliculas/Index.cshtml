@@ -1,0 +1,42 @@
+﻿@model IEnumerable<S7PWU5ProyectoTrailersDePeliculas.Models.Entities.Peliculas>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Listado de Películas</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Duración</th>
+            <th>Año</th>
+            <th>Género</th>
+            <th>Clasificacion</th>
+            <th>Calificación</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Nombre</td>
+                <td>@item.Duracion</td>
+                <td>@item.AnioSalida</td>
+                <td>@item.IdGenero</td>
+                <td>@item.IdClasificacion</td>
+                <td>@item.Calificacion</td>
+                <td>
+                    <a href="@Url.Action("EditarPelicula", new { id = item.IdPelicula })" class="btn btn-primary">Editar</a>
+                    <a href="@Url.Action("EliminarPelicula", new { id = item.IdPelicula })" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a href="@Url.Action("AgregarPelicula")" class="btn btn-info">Agregar Nueva Película</a>
+
+

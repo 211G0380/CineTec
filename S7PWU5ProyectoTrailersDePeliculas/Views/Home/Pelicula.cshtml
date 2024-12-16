@@ -1,0 +1,48 @@
+﻿@model S7PWU5ProyectoTrailersDePeliculas.Models.ViewModels.PeliculaViewModel
+@{
+}
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>-CineTEC-</title>
+    <link rel="stylesheet" href="~/EstiloInformacion.css" />
+</head>
+<body>
+    <header>
+        <a class="back-btn" href="~/Home/index">Volver</a>
+        
+        <nav>
+            <div class="logo">CineTEC</div>
+            
+        </nav>
+    </header>
+
+    <main class="movie-detail">
+
+        <div class="movie-banner">
+            <img width="10px" src="~/imagenes/@(Model.Nombre).jpg" alt="Imagen de la película" class="movie-poster">
+        </div>
+        <div class="movie-info">
+            <h1 class="movie-title">@Model.Nombre</h1>
+            <p class="movie-rating">Clasificacion:  @Model.Clasificacion</p>
+            <p class="movie-rating">Duracion: @Model.Duracion</p>
+            <p class="movie-genre">Género: @Model.Nombre_Genero</p>
+            <p class="movie-rating">Calificación: ⭐ @Model.Calificacion</p>
+            <p class="movie-year">Año: @Model.AnioSalida</p>
+
+
+            <iframe width="560" height="315" src="@Model.LinkTrailer" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <p class="movie-summary">
+                @Model.Resumen
+            </p>
+        </div>
+        
+    </main>
+    <footer>
+        <p>&copy; 2024 CineTEC. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

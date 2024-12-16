@@ -1,0 +1,17 @@
+﻿@model S7PWU5ProyectoTrailersDePeliculas.Models.Entities.Peliculas
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "EliminarPelicula ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>¿Estás seguro de que deseas eliminar la película?</h1>
+
+<form asp-action="EliminarPelicula" method="post">
+    <input type="hidden" asp-for="IdPelicula" />
+    <input type="hidden" asp-for="Nombre" />
+    <p>Nombre: @Model.Nombre</p>
+
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a href="@Url.Action("Index")" class="btn btn-secondary">Cancelar</a>
+</form>

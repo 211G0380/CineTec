@@ -1,0 +1,116 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #fff;
+    line-height: 1.6;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1a1a1a;
+}
+
+    .header .logo {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+
+header nav {
+    display: flex;
+    gap: 10px;
+}
+
+    header nav input {
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    header nav button {
+        padding: 5px 10px;
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        header nav button:hover {
+            background-color: #0056b3;
+        }
+
+.featured-movie {
+    display: flex;
+    padding: 20px;
+    background: linear-gradient(90deg, #1a1a1a, #333);
+}
+
+    .featured-movie img {
+        width: 300px;
+        border-radius: 10px;
+        margin-right: 20px;
+    }
+
+    .featured-movie .movie-info {
+        max-width: 600px;
+    }
+
+    .featured-movie h1 {
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+
+    .featured-movie button {
+        padding: 10px 15px;
+        background-color: #00b4d8;
+        border: none;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+        .featured-movie button:hover {
+            background-color: #218838;
+        }
+
+.recommended {
+    padding: 20px;
+}
+
+    .recommended h2 {
+        margin-bottom: 10px;
+    }
+
+.movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+    .movies-grid .movie {
+        background-color: #1a1a1a;
+        border-radius: 10px;
+        text-align: center;
+        padding: 10px;
+    }
+
+        .movies-grid .movie img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #1a1a1a;
+    margin-top: 20px;
+}

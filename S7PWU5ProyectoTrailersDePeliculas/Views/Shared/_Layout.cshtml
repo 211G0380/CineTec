@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - CorteMovie</title>
+    <link rel="stylesheet" href="~/EstiloPeliculas.css" />
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">CorteMovie</div>
+        <nav>
+            <a href="/Home/Index">Inicio</a>
+            <a href="/Home/Movies">Películas</a>
+            <a href="/Home/Contact">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- Main Section -->
+    <main class="seccion contenedor">
+        @RenderBody() <!-- Aquí se insertará el contenido de cada página -->
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 CorteMovie. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
